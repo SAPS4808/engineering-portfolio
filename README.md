@@ -36,4 +36,4 @@ The previous private site is independent of this GitHub copy. Its edits do not a
 
 ## Content notes
 
-Project artwork is explicitly illustrative and is not project evidence. Case studies will be expanded as original photographs, drawings, reports, and test data become available. The exact degree title needs confirmation because the supplied resume used a Business Administration title under the College of Engineering; the web resume therefore lists the school, robotics concentration, and expected graduation date without an exact degree title.
+Project photographs and robotic-arm demonstrations are supplied by Shlok Agrawal. New project pages contain concise image-led overviews until detailed engineering documentation is provided. The profile and resume list Mechanical Engineering with dual concentrations in Robotics and Technology Innovation.

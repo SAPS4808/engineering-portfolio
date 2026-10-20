@@ -1,26 +1,190 @@
 {
   "name": "Shlok Agrawal",
   "initials": "SA",
-  "discipline": "Mechanical engineering · Robotics · Design",
+  "discipline": "Mechanical Engineering · Robotics · Technology Innovation",
   "intro": "Ideas, made tangible.",
-  "bio": "I’m a mechanical engineering student at Boston University, concentrating in robotics. I’m interested in the space between thoughtful design and working hardware.",
-  "about": "My interests span mechanical design, robotics, and manufacturing. I’m drawn to multidisciplinary problems that connect precise engineering with useful, tangible outcomes.\n\nAt Boston University’s College of Engineering, I’m concentrating in robotics and developing a practice grounded in curiosity, clear reasoning, and hands-on exploration.",
+  "bio": "I’m a Mechanical Engineering major at Boston University with dual concentrations in Robotics and Technology Innovation. I’m interested in the space between thoughtful design and working hardware.",
+  "about": "My interests span mechanical design, robotics, and manufacturing. I’m drawn to multidisciplinary problems that connect precise engineering with useful, tangible outcomes.\n\nAt Boston University’s College of Engineering, I’m majoring in Mechanical Engineering with dual concentrations in Robotics and Technology Innovation—connecting hands-on engineering with the process of bringing new ideas into practice.",
   "email": "shlokagr@bu.edu",
   "linkedin": "https://www.linkedin.com/in/shlokagrawal08/",
   "location": "Boston, Massachusetts",
   "availability": "Boston University / Class of 2028",
   "resume": "./shlok-agrawal-resume.pdf",
-  "hero": "",
-  "portrait": "",
+  "hero": "./media-14-insidefpv-2.jpg",
+  "portrait": "./media-13-me.jpg",
   "experience": "CAD & Fabrication Engineering Intern | June–August 2025\nProgrammed and set up a Fanuc robot, designed precision jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts.\n\nRobotics Lab Internship | Surat | February–May 2024\nMentored RC car, boat, and waste-cleaning device projects. Applied SLAM to combine ground and aerial data for drone-and-rover 3D mapping.\n\nInsideFPV | CAD Intern / Drone Builder\nBuilt drones and oversaw three projects during the internship.\n\nLeadership\nBosMUN — Chair | February 2025\nCoordinated committee proceedings and structured debates.\nCare-N-Share — Founder | India\nOrganized educational resource distribution and book collection across eight schools.",
-  "education": "Boston University · College of Engineering\n2024–2028 | Expected graduation: May 2028\nRobotics concentration\nCGPA: 3.8\n\nActivities: BU HackHardware, Unmanned Aerial Vehicle Club, BU International Affairs Association",
+  "education": "Boston University · College of Engineering\nB.S. in Mechanical Engineering\n2024–2028 | Expected graduation: May 2028\nDual concentrations: Robotics and Technology Innovation\nCGPA: 3.8\n\nActivities: BU HackHardware, Unmanned Aerial Vehicle Club, BU International Affairs Association",
   "skills": "Programming & analysis\nPython · JavaScript · MySQL · MATLAB · R / AI & ML\n\nRobotics & hardware\nCAD · Fabrication · Fanuc robotics · Jigs & fixtures · SLAM · Sensor fusion · Raspberry Pi · Arduino · Microprocessors · LiDAR · Infrared sensing · RTOS · TCP/IP\n\nAdditional learning\nSummer at Brown — Brown University\nCommunication Skills — Trinity College London",
   "projects": [
+    {
+      "id": "deskinator",
+      "title": "Deskinator.",
+      "category": "Mechatronics · Prototyping",
+      "year": "01",
+      "summary": "A desk-cleaning prototype, from concept sketch to assembled hardware.",
+      "cover": "./media-09-deskinator-3.jpg",
+      "role": "",
+      "duration": "",
+      "tools": "",
+      "problem": "",
+      "decisions": "",
+      "development": "",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-11-deskinator-1.jpg",
+          "caption": "Early concept sketch: form, dimensions, and component layout.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-10-deskinator-2.jpg",
+          "caption": "Prototype assembly with motors, electronics, and cleaning components.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-09-deskinator-3.jpg",
+          "caption": "Assembled Deskinator prototype.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false
+    },
+    {
+      "id": "robotic-arm",
+      "title": "Robotic arm.",
+      "category": "Robotics · CAD · Mechanisms",
+      "year": "02",
+      "summary": "A robotic-arm project documented through CAD assembly studies and motion demonstrations.",
+      "cover": "./media-05-roboitc-arm-1.jpg",
+      "role": "",
+      "duration": "",
+      "tools": "",
+      "problem": "",
+      "decisions": "",
+      "development": "",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-04-robotic-arm-2.jpg",
+          "caption": "CAD assembly study and component layout.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-05-roboitc-arm-1.jpg",
+          "caption": "Side view of the robotic-arm assembly.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-01-robotics-arm.mp4",
+          "poster": "./media-01-robotics-arm-poster.jpg",
+          "type": "video/mp4",
+          "caption": "Robotic-arm motion demonstration 1."
+        },
+        {
+          "url": "./media-02-robotic-arm.mp4",
+          "poster": "./media-02-robotic-arm-poster.jpg",
+          "type": "video/mp4",
+          "caption": "Robotic-arm motion demonstration 2."
+        },
+        {
+          "url": "./media-03-robotic-arm-2.mp4",
+          "poster": "./media-03-robotic-arm-2-poster.jpg",
+          "type": "video/mp4",
+          "caption": "Robotic-arm motion demonstration 3."
+        }
+      ],
+      "sample": false
+    },
+    {
+      "id": "four-bar-linkage",
+      "title": "4-bar linkage.",
+      "category": "Mechanical design · Kinematics",
+      "year": "03",
+      "summary": "A four-bar linkage explored through CAD assembly and mechanism geometry.",
+      "cover": "./media-08-4-bar-linkage-1.jpg",
+      "role": "",
+      "duration": "",
+      "tools": "",
+      "problem": "",
+      "decisions": "",
+      "development": "",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-08-4-bar-linkage-1.jpg",
+          "caption": "Four-bar linkage CAD assembly.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false
+    },
+    {
+      "id": "insidefpv",
+      "title": "InsideFPV.",
+      "category": "Drone design · CAD",
+      "year": "04",
+      "summary": "Drone design work from my time as a CAD intern and drone builder at InsideFPV.",
+      "cover": "./media-14-insidefpv-2.jpg",
+      "role": "CAD Intern / Drone Builder",
+      "duration": "",
+      "tools": "CAD / drone assembly",
+      "problem": "",
+      "decisions": "",
+      "development": "Built drones and oversaw three projects during the internship at InsideFPV.",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-14-insidefpv-2.jpg",
+          "caption": "InsideFPV drone product render.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-15-insidefpv-1.jpg",
+          "caption": "InsideFPV drone assembly render.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false
+    },
+    {
+      "id": "designed-to-make",
+      "title": "Innovic / FANUC",
+      "category": "Industrial robotics · Fabrication",
+      "year": "05",
+      "summary": "Robot setup, precision fixtures, and the practical work of turning CAD designs into fabricated parts.",
+      "cover": "./media-07-innovic-fanuc-.jpg",
+      "kind": 2,
+      "role": "CAD & Fabrication Engineering Intern",
+      "duration": "June–August 2025",
+      "tools": "CAD / Fanuc robotics / jigs & fixtures",
+      "problem": "Support a high-precision fabrication project while coordinating production across multiple shifts.",
+      "decisions": "Designed jigs and fixtures for the project’s precision requirements. Geometry, tolerance choices, and manufacturing trade-offs will be added with the supporting drawings.",
+      "development": "Programmed and set up a Fanuc robot. Converted CAD designs into fabricated parts and coordinated production work across multi-shift teams.",
+      "results": "Contributed robot programming, fixture design, and fabricated components. Inspection results, tolerances, and production metrics will be added when available.",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-06-innovic-fanuc-2.jpg",
+          "caption": "FANUC robotic arm and fabrication setup.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-07-innovic-fanuc-.jpg",
+          "caption": "Industrial robot on the workshop floor.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false
+    },
     {
       "id": "motion-study",
       "title": "Mapping across ground & air.",
       "category": "Robotics · SLAM · Sensor fusion",
-      "year": "01",
+      "year": "06",
       "summary": "Combining ground and aerial data to develop a drone-and-rover system for detailed 3D mapping.",
       "cover": "",
       "kind": 0,
@@ -39,7 +203,7 @@
       "id": "robotic-systems",
       "title": "Better localization through SLAM.",
       "category": "Research · Autonomous navigation",
-      "year": "02",
+      "year": "07",
       "summary": "Research into localization accuracy and efficiency through sensor fusion and SLAM optimization.",
       "cover": "",
       "kind": 1,
@@ -53,25 +217,13 @@
       "technical": "",
       "gallery": [],
       "sample": false
-    },
-    {
-      "id": "designed-to-make",
-      "title": "From CAD to the production floor.",
-      "category": "Manufacturing · Industrial robotics",
-      "year": "03",
-      "summary": "Robot setup, precision fixtures, and the practical work of turning CAD designs into fabricated parts.",
-      "cover": "",
-      "kind": 2,
-      "role": "CAD & Fabrication Engineering Intern",
-      "duration": "June–August 2025",
-      "tools": "CAD / Fanuc robotics / jigs & fixtures",
-      "problem": "Support a high-precision fabrication project while coordinating production across multiple shifts.",
-      "decisions": "Designed jigs and fixtures for the project’s precision requirements. Geometry, tolerance choices, and manufacturing trade-offs will be added with the supporting drawings.",
-      "development": "Programmed and set up a Fanuc robot. Converted CAD designs into fabricated parts and coordinated production work across multi-shift teams.",
-      "results": "Contributed robot programming, fixture design, and fabricated components. Inspection results, tolerances, and production metrics will be added when available.",
-      "technical": "",
-      "gallery": [],
-      "sample": false
     }
-  ]
+  ],
+  "aboutPhotos": [
+    {
+      "url": "./media-12-me-2.jpg",
+      "caption": "Shlok Agrawal"
+    }
+  ],
+  "revision": "2026-10-20-media"
 }
