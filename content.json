@@ -49,9 +49,9 @@
       "tools": "SolidWorks / mechanical design / motion control",
       "problem": "Build a mechanism with at least 2.5 degrees of freedom. Our team turned the assignment into a tabletop game: a human player competes against a moving mechanism to score through goal cutouts.",
       "decisions": "We chose three degrees of freedom: translation in X and Y, plus rotation. Randomized motion makes the opponent less predictable. The player can flick the puck, as in carrom, or use a mallet, as in air hockey.",
-      "development": "Designed the mechanism and its components in CAD, then built a working game. The component models show our exported geometry, while the video shows the assembled mechanism in play.",
+      "development": "Designed the mechanism and its components in CAD, then built a working game. The video shows the completed game. The interactive assembly combines our supplied component geometry with a reconstruction of the surrounding hardware.",
       "results": "Completed a playable prototype with translation and rotation. The demonstration documents the game in use.",
-      "technical": "Motion: X translation, Y translation, and rotation. The interactive viewer uses the supplied STL exports; each file can be inspected independently.",
+      "technical": "Motion: X translation, Y translation, and rotation. The complete presentation assembly combines supplied STL meshes with reference geometry reconstructed from the video. Table, rails, belts, pulleys, fasteners, motor housings and electronics are simplified. Dimensions and placements are approximate; this is not fabrication-ready or mechanically validated CAD. Individual supplied parts remain available in the component menu.",
       "gallery": [
         {
           "url": "./media-16-me360-dof-silent.mp4",
@@ -62,6 +62,10 @@
         }
       ],
       "models": [
+        {
+          "url": "./me360-complete-assembly.json",
+          "label": "Complete assembly · reconstructed"
+        },
         {
           "url": "./me360-assembly.stl",
           "label": "Bracket · Assem2 export"
@@ -81,6 +85,10 @@
         {
           "url": "./me360-slider-holder.stl",
           "label": "Slider holder"
+        },
+        {
+          "url": "./me360-mallet-alternate.stl",
+          "label": "Mallet · alternate export"
         }
       ]
     },
@@ -283,7 +291,7 @@
       "caption": "Shlok Agrawal"
     }
   ],
-  "revision": "2026-10-21-experience-and-me360",
+  "revision": "2026-10-21-complete-me360-assembly",
   "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
   "internships": [
     {

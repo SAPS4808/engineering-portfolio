@@ -33,4 +33,4 @@ Project photographs and robotic-arm demonstrations are supplied by Shlok Agrawal
 
 
 ## CAD viewer
-The ME360 project uses locally hosted Three.js (MIT; see THREE-LICENSE.txt) and STL exports. Project model lists and internship cards are editable in content.json. The CAD viewer shows supplied component geometry independently; it does not reconstruct an unprovided full-table assembly.
+The ME360 project uses locally hosted Three.js (MIT; see THREE-LICENSE.txt) and STL exports. Project model lists and internship cards are editable in content.json. The CAD viewer includes a complete presentation assembly reconstructed from the supplied component meshes and video, plus each source STL. Reconstructed reference geometry can be hidden. See me360-assembly-notes.txt for provenance and approximation limits.

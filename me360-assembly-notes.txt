@@ -1,0 +1,9 @@
+ME360 · complete presentation assembly
+
+Source CAD: me360-assembly.stl (Assem2), me360-slider-holder.stl, me360-slider-motor.stl, me360-zaxis-motor.stl, me360-mallet.stl and me360-mallet-alternate.stl. Original STL mesh geometry is preserved; parts are translated/rotated into approximate positions and repeated where appropriate.
+
+Reference geometry: playing surface and goal openings, rail extrusions, guides, belts, pulleys, fasteners, stepper housings, board, puck and cable routing reconstructed from video. Dimensions, fits, placements and wiring are approximate. This is a portfolio presentation model, not fabrication-ready CAD or a mechanically validated assembly.
+
+Viewer colours: original printed CAD parts blue/yellow, original mallets grey; reference geometry follows the video colours. Use “Show reference geometry” to isolate supplied meshes.
+
+STL units: millimetres. STL exports contain geometry only and do not retain colours or component names. The JSON file retains the scene hierarchy and provenance.
