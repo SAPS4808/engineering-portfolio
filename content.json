@@ -77,22 +77,25 @@
           "type": "image/jpeg"
         },
         {
-          "url": "./media-01-robotics-arm.mp4",
-          "poster": "./media-01-robotics-arm-poster.jpg",
+          "url": "./media-01-robotics-arm.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "Robotic-arm motion demonstration 1."
+          "caption": "Robotic-arm overhead demonstration.",
+          "width": 320,
+          "height": 568
         },
         {
-          "url": "./media-02-robotic-arm.mp4",
-          "poster": "./media-02-robotic-arm-poster.jpg",
+          "url": "./media-02-robotic-arm.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "Robotic-arm motion demonstration 2."
+          "caption": "Robotic-arm overhead demonstration.",
+          "width": 320,
+          "height": 568
         },
         {
-          "url": "./media-03-robotic-arm-2.mp4",
-          "poster": "./media-03-robotic-arm-2-poster.jpg",
+          "url": "./media-03-robotic-arm-2.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "Robotic-arm motion demonstration 3."
+          "caption": "CAD and hardware demonstration.",
+          "width": 568,
+          "height": 320
         }
       ],
       "sample": false
@@ -225,5 +228,5 @@
       "caption": "Shlok Agrawal"
     }
   ],
-  "revision": "2026-10-20-media"
+  "revision": "2026-10-20-public-cleanup"
 }
