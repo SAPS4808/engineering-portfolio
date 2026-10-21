@@ -12,43 +12,77 @@
   "resume": "./shlok-agrawal-resume.pdf",
   "hero": "./media-14-insidefpv-2.jpg",
   "portrait": "./media-13-me.jpg",
-  "experience": "CAD & Fabrication Engineering Intern | June–August 2025\nProgrammed and set up a Fanuc robot, designed precision jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts.\n\nRobotics Lab Internship | Surat | February–May 2024\nMentored RC car, boat, and waste-cleaning device projects. Applied SLAM to combine ground and aerial data for drone-and-rover 3D mapping.\n\nInsideFPV | CAD Intern / Drone Builder\nBuilt drones and oversaw three projects during the internship.\n\nLeadership\nBosMUN — Chair | February 2025\nCoordinated committee proceedings and structured debates.\nCare-N-Share — Founder | India\nOrganized educational resource distribution and book collection across eight schools.",
+  "experience": "Innovic Technology · CAD & Fabrication Engineering Intern | June–August 2025\nProgrammed and set up a Fanuc robot, designed precision jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts.\n\nRobotics Lab Internship | Surat | February–May 2024\nMentored RC car, boat, and waste-cleaning device projects. Applied SLAM to combine ground and aerial data for drone-and-rover 3D mapping.\n\nInsideFPV | CAD Intern / Drone Builder\nBuilt drones and oversaw three projects during the internship.\n\nLeadership\nBosMUN — Chair | February 2025\nCoordinated committee proceedings and structured debates.\nCare-N-Share — Founder | India\nOrganized educational resource distribution and book collection across eight schools.",
   "education": "Boston University · College of Engineering\nB.S. in Mechanical Engineering\n2024–2028 | Expected graduation: May 2028\nDual concentrations: Robotics and Technology Innovation\nCGPA: 3.8\n\nActivities: BU HackHardware, Unmanned Aerial Vehicle Club, BU International Affairs Association",
   "skills": "Programming & analysis\nPython · JavaScript · MySQL · MATLAB · R / AI & ML\n\nRobotics & hardware\nCAD · Fabrication · Fanuc robotics · Jigs & fixtures · SLAM · Sensor fusion · Raspberry Pi · Arduino · Microprocessors · LiDAR · Infrared sensing · RTOS · TCP/IP\n\nAdditional learning\nSummer at Brown — Brown University\nCommunication Skills — Trinity College London",
   "projects": [
     {
-      "id": "deskinator",
-      "title": "Deskinator.",
-      "category": "Mechatronics · Prototyping",
-      "year": "01",
-      "summary": "A desk-cleaning prototype, from concept sketch to assembled hardware.",
-      "cover": "./media-09-deskinator-3.jpg",
-      "role": "",
+      "id": "motion-study",
+      "title": "Mapping across ground & air.",
+      "category": "Robotics · SLAM · Sensor fusion",
+      "year": "06",
+      "summary": "A personal project combining drone and rover data for 3D mapping. Currently in development.",
+      "cover": "",
+      "kind": 0,
+      "role": "Personal project",
       "duration": "",
-      "tools": "",
-      "problem": "",
-      "decisions": "",
-      "development": "",
+      "tools": "SLAM / drone & rover integration / 3D mapping",
+      "problem": "Build a mapping system that brings together ground and aerial perspectives.",
+      "decisions": "Exploring SLAM and sensor fusion to connect data from a drone and a rover.",
+      "development": "Developing the ground-and-air mapping system as a personal project.",
       "results": "",
       "technical": "",
+      "gallery": [],
+      "sample": false,
+      "status": "In progress"
+    },
+    {
+      "id": "me360-game",
+      "title": "Three degrees of play.",
+      "category": "ENG ME 360 · Mechatronics",
+      "status": "Completed",
+      "summary": "A tabletop game with a three-degree-of-freedom opponent: X, Y, and rotation, moving through randomized patterns.",
+      "cover": "",
+      "coverVideo": "./media-16-me360-dof-silent.mp4",
+      "role": "Team project · ENG ME 360",
+      "duration": "",
+      "tools": "SolidWorks / mechanical design / motion control",
+      "problem": "Build a mechanism with at least 2.5 degrees of freedom. Our team turned the assignment into a tabletop game: a human player competes against a moving mechanism to score through goal cutouts.",
+      "decisions": "We chose three degrees of freedom: translation in X and Y, plus rotation. Randomized motion makes the opponent less predictable. The player can flick the puck, as in carrom, or use a mallet, as in air hockey.",
+      "development": "Designed the mechanism and its components in CAD, then built a working game. The component models show our exported geometry, while the video shows the assembled mechanism in play.",
+      "results": "Completed a playable prototype with translation and rotation. The demonstration documents the game in use.",
+      "technical": "Motion: X translation, Y translation, and rotation. The interactive viewer uses the supplied STL exports; each file can be inspected independently.",
       "gallery": [
         {
-          "url": "./media-11-deskinator-1.jpg",
-          "caption": "Early concept sketch: form, dimensions, and component layout.",
-          "type": "image/jpeg"
-        },
-        {
-          "url": "./media-10-deskinator-2.jpg",
-          "caption": "Prototype assembly with motors, electronics, and cleaning components.",
-          "type": "image/jpeg"
-        },
-        {
-          "url": "./media-09-deskinator-3.jpg",
-          "caption": "Assembled Deskinator prototype.",
-          "type": "image/jpeg"
+          "url": "./media-16-me360-dof-silent.mp4",
+          "type": "video/mp4",
+          "caption": "The completed ENG ME 360 game in play.",
+          "width": 568,
+          "height": 320
         }
       ],
-      "sample": false
+      "models": [
+        {
+          "url": "./me360-assembly.stl",
+          "label": "Bracket · Assem2 export"
+        },
+        {
+          "url": "./me360-mallet.stl",
+          "label": "Mallet"
+        },
+        {
+          "url": "./me360-slider-motor.stl",
+          "label": "Slider motor"
+        },
+        {
+          "url": "./me360-zaxis-motor.stl",
+          "label": "Rotation motor"
+        },
+        {
+          "url": "./me360-slider-holder.stl",
+          "label": "Slider holder"
+        }
+      ]
     },
     {
       "id": "robotic-arm",
@@ -98,31 +132,8 @@
           "height": 320
         }
       ],
-      "sample": false
-    },
-    {
-      "id": "four-bar-linkage",
-      "title": "4-bar linkage.",
-      "category": "Mechanical design · Kinematics",
-      "year": "03",
-      "summary": "A four-bar linkage explored through CAD assembly and mechanism geometry.",
-      "cover": "./media-08-4-bar-linkage-1.jpg",
-      "role": "",
-      "duration": "",
-      "tools": "",
-      "problem": "",
-      "decisions": "",
-      "development": "",
-      "results": "",
-      "technical": "",
-      "gallery": [
-        {
-          "url": "./media-08-4-bar-linkage-1.jpg",
-          "caption": "Four-bar linkage CAD assembly.",
-          "type": "image/jpeg"
-        }
-      ],
-      "sample": false
+      "sample": false,
+      "status": "Completed"
     },
     {
       "id": "insidefpv",
@@ -151,7 +162,68 @@
           "type": "image/jpeg"
         }
       ],
-      "sample": false
+      "sample": false,
+      "status": "Completed"
+    },
+    {
+      "id": "deskinator",
+      "title": "Deskinator.",
+      "category": "Mechatronics · Prototyping",
+      "year": "01",
+      "summary": "A desk-cleaning prototype, from concept sketch to assembled hardware.",
+      "cover": "./media-09-deskinator-3.jpg",
+      "role": "",
+      "duration": "",
+      "tools": "",
+      "problem": "",
+      "decisions": "",
+      "development": "",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-11-deskinator-1.jpg",
+          "caption": "Early concept sketch: form, dimensions, and component layout.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-10-deskinator-2.jpg",
+          "caption": "Prototype assembly with motors, electronics, and cleaning components.",
+          "type": "image/jpeg"
+        },
+        {
+          "url": "./media-09-deskinator-3.jpg",
+          "caption": "Assembled Deskinator prototype.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false,
+      "status": "Completed"
+    },
+    {
+      "id": "four-bar-linkage",
+      "title": "4-bar linkage.",
+      "category": "Mechanical design · Kinematics",
+      "year": "03",
+      "summary": "A four-bar linkage explored through CAD assembly and mechanism geometry.",
+      "cover": "./media-08-4-bar-linkage-1.jpg",
+      "role": "",
+      "duration": "",
+      "tools": "",
+      "problem": "",
+      "decisions": "",
+      "development": "",
+      "results": "",
+      "technical": "",
+      "gallery": [
+        {
+          "url": "./media-08-4-bar-linkage-1.jpg",
+          "caption": "Four-bar linkage CAD assembly.",
+          "type": "image/jpeg"
+        }
+      ],
+      "sample": false,
+      "status": "Completed"
     },
     {
       "id": "designed-to-make",
@@ -181,26 +253,8 @@
           "type": "image/jpeg"
         }
       ],
-      "sample": false
-    },
-    {
-      "id": "motion-study",
-      "title": "Mapping across ground & air.",
-      "category": "Robotics · SLAM · Sensor fusion",
-      "year": "06",
-      "summary": "Combining ground and aerial data to develop a drone-and-rover system for detailed 3D mapping.",
-      "cover": "",
-      "kind": 0,
-      "role": "Mentor-engineer · Robotics Lab Internship",
-      "duration": "February–May 2024",
-      "tools": "SLAM / drone & rover integration / 3D mapping",
-      "problem": "Bring together ground and aerial perspectives for detailed 3D mapping within a robotics lab project.",
-      "decisions": "Applied simultaneous localization and mapping (SLAM) to integrate ground and aerial data. Detailed algorithm choices and design trade-offs will be added with the technical documentation.",
-      "development": "Developed the drone-and-rover mapping system during a robotics lab internship in Surat. Alongside this work, mentored RC car, boat, and waste-cleaning device builds.",
-      "results": "Developed a system for detailed 3D mapping. Test datasets, mapping accuracy, and quantitative performance results will be added as supporting material becomes available.",
-      "technical": "",
-      "gallery": [],
-      "sample": false
+      "sample": false,
+      "status": "Completed"
     },
     {
       "id": "robotic-systems",
@@ -211,7 +265,7 @@
       "cover": "",
       "kind": 1,
       "role": "Individual research",
-      "duration": "March–June 2023 · Surat",
+      "duration": "January–June/July 2023 · Surat",
       "tools": "SLAM / sensor fusion / algorithm optimization",
       "problem": "Explore how sensor fusion and algorithm optimization can improve simultaneous localization and mapping for robotic navigation.",
       "decisions": "Focused the research on sensor fusion and optimization to address localization accuracy and efficiency. Specific algorithm comparisons will be documented alongside the paper.",
@@ -219,7 +273,8 @@
       "results": "Produced research on improving localization precision. The paper, experimental methods, and quantitative comparisons will be added to this case study.",
       "technical": "",
       "gallery": [],
-      "sample": false
+      "sample": false,
+      "status": "Completed"
     }
   ],
   "aboutPhotos": [
@@ -228,5 +283,22 @@
       "caption": "Shlok Agrawal"
     }
   ],
-  "revision": "2026-10-20-public-cleanup"
+  "revision": "2026-10-21-experience-and-me360",
+  "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
+  "internships": [
+    {
+      "company": "InsideFPV",
+      "url": "https://insidefpv.com/",
+      "logo": "./logo-insidefpv.png",
+      "role": "CAD Intern / Drone Builder",
+      "description": "Built drones and oversaw three projects, working across CAD design and hardware assembly."
+    },
+    {
+      "company": "Innovic Technology",
+      "url": "https://innovictechnology.com/",
+      "logo": "./logo-innovic.jpg",
+      "role": "CAD & Fabrication Engineering Intern",
+      "description": "Programmed a FANUC robot, designed jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts."
+    }
+  ]
 }

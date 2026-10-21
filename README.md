@@ -30,3 +30,7 @@ The previous private site is independent of this GitHub copy. Its edits do not a
 ## Content notes
 
 Project photographs and robotic-arm demonstrations are supplied by Shlok Agrawal. New project pages contain concise image-led overviews until detailed engineering documentation is provided. The profile and resume list Mechanical Engineering with dual concentrations in Robotics and Technology Innovation.
+
+
+## CAD viewer
+The ME360 project uses locally hosted Three.js (MIT; see THREE-LICENSE.txt) and STL exports. Project model lists and internship cards are editable in content.json. The CAD viewer shows supplied component geometry independently; it does not reconstruct an unprovided full-table assembly.
