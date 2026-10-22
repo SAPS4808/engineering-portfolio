@@ -23,7 +23,7 @@ export function mountCAD(){
  let object;
  if(isAssembly)object=await new THREE.ObjectLoader().loadAsync(select.value);
  else{const geometry=await new STLLoader().loadAsync(select.value);geometry.computeVertexNormals();object=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color:0x9ba6ad,metalness:.22,roughness:.42,side:THREE.DoubleSide}));}
- if(!alive||token!==request){dispose(object);return;}
+ if(!alive||token!==request){dispose(object);return;}referenceToggle.closest('label').hidden=!isAssembly||!!object.userData.visualOnly;
  const bounds=new THREE.Box3().setFromObject(object),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
  const wrapper=new THREE.Group();wrapper.userData.assembly=isAssembly;object.position.sub(center);wrapper.add(object);wrapper.scale.setScalar(2/Math.max(size.x,size.y,size.z));
  if(model){scene.remove(model);dispose(model);}model=wrapper;scene.add(model);referenceVisibility();status.hidden=true;reset();
