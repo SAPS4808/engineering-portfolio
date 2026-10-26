@@ -162,6 +162,10 @@
           "body": "The demonstration shows an extrusion-supported frame, threaded drive elements, motors and a pen carriage. One stage carries the transverse structure; the second positions the pen along it. Together they generate motion in the drawing plane."
         },
         {
+          "title": "Example control approach",
+          "body": "A reconstructed MATLAB example shows how a drawing can be represented by XY waypoints, interpolated into small movements and animated as a pen trace. It closes a rectangular path and calculates idealized travel time at a constant feed rate. The dimensions and timing are illustrative. This example was created after the class exercise; it is not the source used in the demonstration and has not been tested on the original hardware."
+        },
+        {
           "title": "Construction",
           "body": "The rig combines structural extrusion with custom supports and a pen holder. The video documents the assembled mechanism. The original component CAD, first-stage design revision and exact manufacturing methods for this exercise have not yet been supplied."
         },
@@ -179,7 +183,16 @@
           "height": 320
         }
       ],
-      "technical": "Supporting evidence: original class demonstration video. Plotter-specific CAD, first linear-stage revision, manufacturing details and drawing-control source code are still to be added. The game scripts are documented separately on the three-degree-of-freedom project page."
+      "technical": "Supporting evidence: original class demonstration video. The downloadable MATLAB example is a later simulation-only reconstruction, not the original plotter-control code. It sends no hardware commands. Plotter-specific CAD, first linear-stage revision, manufacturing details and original classroom source remain to be added.",
+      "resources": [
+        {
+          "url": "./plotter_path_example.m",
+          "label": "Reconstructed MATLAB example · simulation only",
+          "description": "Created after the exercise, not the original classroom script. Generates and animates a rectangular pen path without connecting to hardware. Not tested on the class rig."
+        }
+      ],
+      "codeSnippet": "waypoints = [0 0; 80 0; 80 50; 0 50; 0 0];\n% For each line segment:\ndelta = endPoint - startPoint;\nsampleCount = max(1, ceil(norm(delta)/sampleSpacing));\nfraction = (1:sampleCount)' / sampleCount;\npoints = startPoint + fraction .* delta;",
+      "codeCaption": "Reconstructed simulation example — created after the exercise. Illustrative units; not original class code or hardware-tested."
     },
     {
       "id": "robotic-arm",
@@ -387,7 +400,7 @@
       "caption": "Shlok Agrawal"
     }
   ],
-  "revision": "2026-10-25-class-project-documentation",
+  "revision": "2026-10-25-plotter-reconstructed-example",
   "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
   "internships": [
     {
