@@ -39,7 +39,7 @@
     {
       "id": "me360-game",
       "title": "Three degrees of play.",
-      "category": "ENG ME 360 · Mechatronics",
+      "category": "ENG ME 360 · 2.5+ DOF system",
       "status": "Completed",
       "summary": "A tabletop game with a three-degree-of-freedom opponent: X, Y, and rotation, moving through randomized patterns.",
       "cover": "",
@@ -51,7 +51,7 @@
       "decisions": "We chose three degrees of freedom: translation in X and Y, plus rotation. Randomized motion makes the opponent less predictable. The player can flick the puck, as in carrom, or use a mallet, as in air hockey.",
       "development": "Designed the mechanism and its components in CAD, then built a working game. The video shows the completed game. The interactive assembly combines our supplied component geometry with a reconstruction of the surrounding hardware.",
       "results": "Completed a playable prototype with translation and rotation. The demonstration documents the game in use.",
-      "technical": "Motion: X translation, Y translation, and rotation. The complete presentation assembly combines supplied STL meshes with reference geometry reconstructed from the video. Table, rails, belts, pulleys, fasteners, motor housings and electronics are simplified. Dimensions and placements are approximate; this is not fabrication-ready or mechanically validated CAD. Individual supplied parts remain available in the component menu.",
+      "technical": "Motion: X translation, Y translation, and rotation. The complete presentation assembly combines supplied STL meshes with reference geometry reconstructed from the video. Table, rails, belts, pulleys, fasteners, motor housings and electronics are simplified. Dimensions and placements are approximate; this is not fabrication-ready or mechanically validated CAD. Individual supplied parts remain available in the component menu.\n\nDocumentation still to add: first linear-stage revision, confirmed manufacturing methods/materials, individual team contributions and quantitative test results. MATLAB files are supplied as project source for review; their settings are specific to the class hardware.",
       "gallery": [
         {
           "url": "./media-16-me360-dof-silent.mp4",
@@ -90,7 +90,96 @@
           "url": "./me360-mallet-alternate.stl",
           "label": "Mallet · alternate export"
         }
-      ]
+      ],
+      "sections": [
+        {
+          "title": "Brief & function",
+          "body": "For ENG ME 360, our team had to build a system with at least 2.5 degrees of freedom. We made a tabletop game with a mechanism that translates in X and Y and rotates a mallet. A player flicks the puck or uses a handheld mallet to score through goal openings while the mechanism follows randomized motion."
+        },
+        {
+          "title": "Linear stage & gantry",
+          "body": "The two linear axes position the mallet over the playing surface. The source code synchronizes two bridge motors through the X and E1 drivers, then moves the transverse carriage with the Y driver. Keeping the bridge square matters because the two sides must travel together. The available carriage, slider-holder and motor-mount CAD can be inspected individually in the viewer."
+        },
+        {
+          "title": "Final assembly",
+          "body": "The built system combines the playing surface, longitudinal rails, transverse gantry, carriage, rotary drive and mallet. The video shows the working hardware. The complete 3D assembly is a presentation reconstruction using our supplied STL geometry; surrounding hardware and placement are approximate."
+        },
+        {
+          "title": "Construction & manufacturing",
+          "body": "Custom brackets and holders connect the linear guides, motors and mallet to an extrusion-based frame. The supplied SolidWorks parts and STL exports document the component geometry. Exact material, fabrication process and assembly tolerances have not yet been documented here."
+        },
+        {
+          "title": "Control software",
+          "body": "The final MATLAB loop sends G-code over a serial connection. It positions the bridge, queues alternating randomized Y destinations, returns the carriage to its midpoint and returns the bridge to its start. The rotary motor stays powered during motion. The code waits for controller acknowledgements and uses M400 when it needs motion to finish. Its coordinate zero is set manually; it does not perform a homing search. The rotary channel is PWM power control, not closed-loop angular positioning: two positioned linear axes plus powered rotation satisfy the 2.5+ DOF brief."
+        },
+        {
+          "title": "Demonstration & outcome",
+          "body": "The completed game is shown in play in the video above. The demonstration establishes a working prototype; repeatability, positioning error and game performance have not been measured in this case study."
+        }
+      ],
+      "resources": [
+        {
+          "url": "./FinalME360_continuous_loop.m",
+          "label": "Final MATLAB game loop · source",
+          "description": "Alternating randomized travel with continuously powered rotation."
+        },
+        {
+          "url": "./sunhosendingME360_continuous_loop.m",
+          "label": "Earlier continuous-loop version · source",
+          "description": "Earlier random-target implementation."
+        },
+        {
+          "url": "./workingbestME1360_sequential_demo.m",
+          "label": "Sequential mechanism demo · source",
+          "description": "Moves each linear axis, applies timed rotation, then returns to zero."
+        },
+        {
+          "url": "./me360-complete-assembly.stl",
+          "label": "Presentation assembly · STL",
+          "description": "Reconstructed assembly; approximate surrounding hardware."
+        }
+      ],
+      "codeSnippet": "x = round((0.25 + 0.75*rand)*X_MAX, 3);\nsend(sprintf('G1 X%.3f E%.3f F%g', x, X2_DIRECTION*x, FEED));\nsend(\"M400\");\n% After the queued randomized Y moves:\nsend(sprintf('G1 Y0 F%g', RETURN_FEED));\nsend(\"M400\");\nsend(sprintf('G1 X0 E0 F%g', RETURN_FEED));"
+    },
+    {
+      "id": "class-plotter",
+      "title": "Class plotter exercise.",
+      "category": "ENG ME 360 · Motion control",
+      "status": "Completed",
+      "summary": "A two-axis pen plotter: turning coordinated linear motion into a drawing on paper.",
+      "cover": "",
+      "coverVideo": "./media-17-plotter-silent.mp4",
+      "role": "In-class team exercise",
+      "duration": "",
+      "tools": "Linear stages / lead screws / pen carriage",
+      "sections": [
+        {
+          "title": "Exercise & function",
+          "body": "The class exercise uses a pen mounted on a moving carriage to turn two-axis positioning into a drawing. Coordinating travel along the two linear axes moves the pen across the paper."
+        },
+        {
+          "title": "Mechanism & assembly",
+          "body": "The demonstration shows an extrusion-supported frame, threaded drive elements, motors and a pen carriage. One stage carries the transverse structure; the second positions the pen along it. Together they generate motion in the drawing plane."
+        },
+        {
+          "title": "Construction",
+          "body": "The rig combines structural extrusion with custom supports and a pen holder. The video documents the assembled mechanism. The original component CAD, first-stage design revision and exact manufacturing methods for this exercise have not yet been supplied."
+        },
+        {
+          "title": "Demonstration & outcome",
+          "body": "The video shows the pen drawing a geometric outline on paper. It records the exercise in operation; drawing accuracy, repeatability and speed have not been quantified here."
+        }
+      ],
+      "gallery": [
+        {
+          "url": "./media-17-plotter-silent.mp4",
+          "type": "video/mp4",
+          "caption": "In-class plotter demonstration: coordinated pen motion on paper.",
+          "width": 568,
+          "height": 320
+        }
+      ],
+      "technical": "Supporting evidence: original class demonstration video. Plotter-specific CAD, first linear-stage revision, manufacturing details and drawing-control source code are still to be added. The game scripts are documented separately on the three-degree-of-freedom project page."
     },
     {
       "id": "robotic-arm",
@@ -298,7 +387,7 @@
       "caption": "Shlok Agrawal"
     }
   ],
-  "revision": "2026-10-22-insidefpv-cutouts-and-model",
+  "revision": "2026-10-25-class-project-documentation",
   "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
   "internships": [
     {
