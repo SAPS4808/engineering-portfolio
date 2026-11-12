@@ -21,37 +21,39 @@
       "title": "Mapping across ground & air.",
       "category": "Robotics · SLAM · Sensor fusion",
       "year": "06",
-      "summary": "A personal project combining drone and rover data for 3D mapping. Currently in development.",
+      "summary": "I’m building a 3D mapping system around two views of the same place: one from a rover and one from a drone.",
       "cover": "",
       "kind": 0,
       "role": "Personal project",
       "duration": "",
       "tools": "SLAM / drone & rover integration / 3D mapping",
-      "problem": "Build a mapping system that brings together ground and aerial perspectives.",
-      "decisions": "Exploring SLAM and sensor fusion to connect data from a drone and a rover.",
-      "development": "Developing the ground-and-air mapping system as a personal project.",
-      "results": "",
       "technical": "",
       "gallery": [],
       "sample": false,
-      "status": "In progress"
+      "status": "In progress",
+      "sections": [
+        {
+          "title": "Two views of the same place",
+          "body": "A rover sees the ground up close. A drone can see over the things that block the rover’s view. I want to find out whether those two perspectives can fill in each other’s gaps."
+        },
+        {
+          "title": "Getting the maps to agree",
+          "body": "Each platform has its own estimate of where it is. If either estimate drifts, the same wall could end up in two places when the maps are combined. My first milestone is to get a small area that both platforms have seen to line up in one coordinate frame."
+        }
+      ]
     },
     {
       "id": "me360-game",
-      "title": "Three degrees of play.",
+      "title": "Air hockey against a robot",
       "category": "ENG ME 360 · 2.5+ DOF system",
       "status": "Completed",
-      "summary": "A tabletop game with a three-degree-of-freedom opponent: X, Y, and rotation, moving through randomized patterns.",
+      "summary": "Our ME 360 brief called for at least 2.5 degrees of freedom. We built an air-hockey opponent that slides in X and Y and spins a mallet.",
       "cover": "",
       "coverVideo": "./media-16-me360-dof-silent.mp4",
       "role": "Team project · ENG ME 360",
       "duration": "",
       "tools": "SolidWorks / mechanical design / motion control",
-      "problem": "Build a mechanism with at least 2.5 degrees of freedom. Our team turned the assignment into a tabletop game: a human player competes against a moving mechanism to score through goal cutouts.",
-      "decisions": "We chose three degrees of freedom: translation in X and Y, plus rotation. Randomized motion makes the opponent less predictable. The player can flick the puck, as in carrom, or use a mallet, as in air hockey.",
-      "development": "Designed the mechanism and its components in CAD, then built a working game. The video shows the completed game. The interactive assembly combines our supplied component geometry with a reconstruction of the surrounding hardware.",
-      "results": "Completed a playable prototype with translation and rotation. The demonstration documents the game in use.",
-      "technical": "Motion: X translation, Y translation, and rotation. The complete presentation assembly combines supplied STL meshes with reference geometry reconstructed from the video. Table, rails, belts, pulleys, fasteners, motor housings and electronics are simplified. Dimensions and placements are approximate; this is not fabrication-ready or mechanically validated CAD. Individual supplied parts remain available in the component menu.\n\nDocumentation still to add: first linear-stage revision, confirmed manufacturing methods/materials, individual team contributions and quantitative test results. MATLAB files are supplied as project source for review; their settings are specific to the class hardware.",
+      "technical": "MATLAB sends G-code over serial. The controller acknowledges queued commands, and M400 waits for the moves to finish. X and Y use position commands, while the rotary motor runs at a set PWM power. The 3D assembly combines original part exports with approximate frame and drive geometry reconstructed from the video.",
       "gallery": [
         {
           "url": "./media-16-me360-dof-silent.mp4",
@@ -93,60 +95,52 @@
       ],
       "sections": [
         {
-          "title": "Brief & function",
-          "body": "For ENG ME 360, our team had to build a system with at least 2.5 degrees of freedom. We made a tabletop game with a mechanism that translates in X and Y and rotates a mallet. A player flicks the puck or uses a handheld mallet to score through goal openings while the mechanism follows randomized motion."
+          "title": "We made a game out of the brief",
+          "body": "We cut goals into the table and gave the player two ways to shoot: flick the puck like in carrom or hit it with a handheld mallet. On the other side, the robot moves its own mallet around the table. We randomized its motion so a player couldn’t count on the same opening every time."
         },
         {
-          "title": "Linear stage & gantry",
-          "body": "The two linear axes position the mallet over the playing surface. The source code synchronizes two bridge motors through the X and E1 drivers, then moves the transverse carriage with the Y driver. Keeping the bridge square matters because the two sides must travel together. The available carriage, slider-holder and motor-mount CAD can be inspected individually in the viewer."
+          "title": "The first demo moved one axis at a time",
+          "body": "Our sequential demo moved the bridge, moved the carriage, then spun the mallet. It was a good way to check each motion on its own. For the game, we kept the mallet spinning and queued several side-to-side moves at randomized distances before bringing the carriage back to center."
         },
         {
-          "title": "Final assembly",
-          "body": "The built system combines the playing surface, longitudinal rails, transverse gantry, carriage, rotary drive and mallet. The video shows the working hardware. The complete 3D assembly is a presentation reconstruction using our supplied STL geometry; surrounding hardware and placement are approximate."
+          "title": "Two motors, one bridge",
+          "body": "The bridge is belt-driven on both sides. MATLAB sends both motors the same travel in opposite motor directions so the two ends advance together. We had to start with the bridge square and set zero by hand. The controller can finish every move it’s given and still be off if the physical starting point is wrong."
         },
         {
-          "title": "Construction & manufacturing",
-          "body": "Custom brackets and holders connect the linear guides, motors and mallet to an extrusion-based frame. The supplied SolidWorks parts and STL exports document the component geometry. Exact material, fabrication process and assembly tolerances have not yet been documented here."
-        },
-        {
-          "title": "Control software",
-          "body": "The final MATLAB loop sends G-code over a serial connection. It positions the bridge, queues alternating randomized Y destinations, returns the carriage to its midpoint and returns the bridge to its start. The rotary motor stays powered during motion. The code waits for controller acknowledgements and uses M400 when it needs motion to finish. Its coordinate zero is set manually; it does not perform a homing search. The rotary channel is PWM power control, not closed-loop angular positioning: two positioned linear axes plus powered rotation satisfy the 2.5+ DOF brief."
-        },
-        {
-          "title": "Demonstration & outcome",
-          "body": "The completed game is shown in play in the video above. The demonstration establishes a working prototype; repeatability, positioning error and game performance have not been measured in this case study."
+          "title": "What we got working",
+          "body": "The video shows the finished game in play. Getting there meant treating the motion sequence as part of the game design. The same hardware could run through a tidy checklist of moves or give the player a moving target they had to watch."
         }
       ],
       "resources": [
         {
           "url": "./FinalME360_continuous_loop.m",
           "label": "Final MATLAB game loop · source",
-          "description": "Alternating randomized travel with continuously powered rotation."
+          "description": "Final game loop with randomized side-to-side passes and continuous mallet rotation."
         },
         {
           "url": "./sunhosendingME360_continuous_loop.m",
           "label": "Earlier continuous-loop version · source",
-          "description": "Earlier random-target implementation."
+          "description": "Earlier loop with one random Y destination per cycle."
         },
         {
           "url": "./workingbestME1360_sequential_demo.m",
           "label": "Sequential mechanism demo · source",
-          "description": "Moves each linear axis, applies timed rotation, then returns to zero."
+          "description": "One axis at a time, followed by a timed spin and a return to zero."
         },
         {
           "url": "./me360-complete-assembly.stl",
           "label": "Presentation assembly · STL",
-          "description": "Reconstructed assembly; approximate surrounding hardware."
+          "description": "Original part geometry with an approximate frame and drive layout."
         }
       ],
       "codeSnippet": "x = round((0.25 + 0.75*rand)*X_MAX, 3);\nsend(sprintf('G1 X%.3f E%.3f F%g', x, X2_DIRECTION*x, FEED));\nsend(\"M400\");\n% After the queued randomized Y moves:\nsend(sprintf('G1 Y0 F%g', RETURN_FEED));\nsend(\"M400\");\nsend(sprintf('G1 X0 E0 F%g', RETURN_FEED));"
     },
     {
       "id": "class-plotter",
-      "title": "Class plotter exercise.",
+      "title": "Drawing with two axes",
       "category": "ENG ME 360 · Motion control",
       "status": "Completed",
-      "summary": "A two-axis pen plotter: turning coordinated linear motion into a drawing on paper.",
+      "summary": "In class, we used two motorized stages and a pen to draw a geometric outline on paper.",
       "cover": "",
       "coverVideo": "./media-17-plotter-silent.mp4",
       "role": "In-class team exercise",
@@ -154,24 +148,12 @@
       "tools": "Linear stages / lead screws / pen carriage",
       "sections": [
         {
-          "title": "Exercise & function",
-          "body": "The class exercise uses a pen mounted on a moving carriage to turn two-axis positioning into a drawing. Coordinating travel along the two linear axes moves the pen across the paper."
+          "title": "The pen shows what both axes did",
+          "body": "One lead-screw stage moves the crossbar, and the other moves the pen along it. A line on the page is a record of their combined motion. The corners make that especially easy to see because the pen has to change direction at a specific point."
         },
         {
-          "title": "Mechanism & assembly",
-          "body": "The demonstration shows an extrusion-supported frame, threaded drive elements, motors and a pen carriage. One stage carries the transverse structure; the second positions the pen along it. Together they generate motion in the drawing plane."
-        },
-        {
-          "title": "Example control approach",
-          "body": "A reconstructed MATLAB example shows how a drawing can be represented by XY waypoints, interpolated into small movements and animated as a pen trace. It closes a rectangular path and calculates idealized travel time at a constant feed rate. The dimensions and timing are illustrative. This example was created after the class exercise; it is not the source used in the demonstration and has not been tested on the original hardware."
-        },
-        {
-          "title": "Construction",
-          "body": "The rig combines structural extrusion with custom supports and a pen holder. The video documents the assembled mechanism. The original component CAD, first-stage design revision and exact manufacturing methods for this exercise have not yet been supplied."
-        },
-        {
-          "title": "Demonstration & outcome",
-          "body": "The video shows the pen drawing a geometric outline on paper. It records the exercise in operation; drawing accuracy, repeatability and speed have not been quantified here."
+          "title": "From four corners to a path",
+          "body": "The class video shows the hardware drawing. I’ve included a small MATLAB simulation alongside it to show the path math. Give it the corners of a rectangle and it fills in points along each edge, including the move back to the start. The simulation was made after class and runs on screen."
         }
       ],
       "gallery": [
@@ -183,92 +165,94 @@
           "height": 320
         }
       ],
-      "technical": "Supporting evidence: original class demonstration video. The downloadable MATLAB example is a later simulation-only reconstruction, not the original plotter-control code. It sends no hardware commands. Plotter-specific CAD, first linear-stage revision, manufacturing details and original classroom source remain to be added.",
+      "technical": "",
       "resources": [
         {
           "url": "./plotter_path_example.m",
-          "label": "Reconstructed MATLAB example · simulation only",
-          "description": "Created after the exercise, not the original classroom script. Generates and animates a rectangular pen path without connecting to hardware. Not tested on the class rig."
+          "label": "MATLAB pen-path example · simulation",
+          "description": "A later simulation that interpolates and animates a rectangular pen path."
         }
       ],
       "codeSnippet": "waypoints = [0 0; 80 0; 80 50; 0 50; 0 0];\n% For each line segment:\ndelta = endPoint - startPoint;\nsampleCount = max(1, ceil(norm(delta)/sampleSpacing));\nfraction = (1:sampleCount)' / sampleCount;\npoints = startPoint + fraction .* delta;",
-      "codeCaption": "Reconstructed simulation example — created after the exercise. Illustrative units; not original class code or hardware-tested."
+      "codeCaption": "Later MATLAB simulation using illustrative dimensions."
     },
     {
       "id": "robotic-arm",
-      "title": "Robotic arm.",
+      "title": "A robotic arm that stamps paper",
       "category": "Robotics · CAD · Mechanisms",
       "year": "02",
-      "summary": "A robotic-arm project documented through CAD assembly studies and motion demonstrations.",
+      "summary": "The arm had a four-step job: pick a stamp from the rack, ink it, press it onto paper, then put it back.",
       "cover": "./media-05-roboitc-arm-1.jpg",
       "role": "",
       "duration": "",
       "tools": "",
-      "problem": "",
-      "decisions": "",
-      "development": "",
-      "results": "",
       "technical": "",
       "gallery": [
         {
           "url": "./media-04-robotic-arm-2.jpg",
-          "caption": "CAD assembly study and component layout.",
+          "caption": "Overhead controller view with the rack, ink pad, paper, and return step labeled.",
           "type": "image/jpeg"
         },
         {
           "url": "./media-05-roboitc-arm-1.jpg",
-          "caption": "Side view of the robotic-arm assembly.",
+          "caption": "Side view of the arm linkage and curved stamp rack.",
           "type": "image/jpeg"
         },
         {
           "url": "./media-01-robotics-arm.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "Robotic-arm overhead demonstration.",
+          "caption": "Overhead motion demo.",
           "width": 320,
           "height": 568
         },
         {
           "url": "./media-02-robotic-arm.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "Robotic-arm overhead demonstration.",
+          "caption": "A second overhead run.",
           "width": 320,
           "height": 568
         },
         {
           "url": "./media-03-robotic-arm-2.mp4?v=silent-20261020",
           "type": "video/mp4",
-          "caption": "CAD and hardware demonstration.",
+          "caption": "Side view of the arm demonstration.",
           "width": 568,
           "height": 320
         }
       ],
       "sample": false,
-      "status": "Completed"
+      "status": "Completed",
+      "sections": [
+        {
+          "title": "The layout was part of the mechanism",
+          "body": "The rack, ink pad, and paper all had to sit within reach of the same arm. The rack curves around the base, and the controller view lays out the stops in order. Reaching a slot is only half the job. The arm also needs enough room to lift the stamp clear and carry it to the next station."
+        },
+        {
+          "title": "Following the stamp",
+          "body": "The overhead controller view is where I’d start. It shows the whole job in one frame, with the stations labeled and the arm’s joint angles visible. The other views show how the linkage folds as the end of the arm moves in and out."
+        }
+      ]
     },
     {
       "id": "insidefpv",
       "title": "InsideFPV.",
       "category": "Drone design · CAD",
       "year": "04",
-      "summary": "Drone design work from my time as a CAD intern and drone builder at InsideFPV.",
+      "summary": "I built drones and oversaw three projects as a CAD intern at InsideFPV.",
       "cover": "./insidefpv-product-cutout.png",
       "role": "CAD Intern / Drone Builder",
       "duration": "",
       "tools": "CAD / drone assembly",
-      "problem": "",
-      "decisions": "",
-      "development": "Built drones and oversaw three projects during the internship at InsideFPV.",
-      "results": "",
       "technical": "",
       "gallery": [
         {
           "url": "./insidefpv-product-cutout.png",
-          "caption": "InsideFPV drone product render.",
+          "caption": "InsideFPV product render.",
           "type": "image/jpeg"
         },
         {
           "url": "./insidefpv-second-cutout.png",
-          "caption": "InsideFPV drone assembly render.",
+          "caption": "Second InsideFPV product image.",
           "type": "image/jpeg"
         }
       ],
@@ -280,122 +264,152 @@
           "label": "Exterior study · approximate"
         }
       ],
-      "modelNote": "Approximate exterior visualization reconstructed from the product image. This is a visual study, not original CAD or a functional engineering model."
+      "modelNote": "Exterior study reconstructed from a product image.",
+      "sections": [
+        {
+          "title": "From CAD to the bench",
+          "body": "I worked on both sides of the build, drawing parts in CAD and assembling drones. At the bench, fit has a second meaning. A part can fit in the model and still be awkward to install if there’s no room to get a tool in or route a wire."
+        }
+      ]
     },
     {
       "id": "deskinator",
       "title": "Deskinator.",
       "category": "Mechatronics · Prototyping",
       "year": "01",
-      "summary": "A desk-cleaning prototype, from concept sketch to assembled hardware.",
+      "summary": "I went from a dimensioned sketch to a wheeled prototype for vacuuming crumbs off a desk.",
       "cover": "./media-09-deskinator-3.jpg",
       "role": "",
       "duration": "",
       "tools": "",
-      "problem": "",
-      "decisions": "",
-      "development": "",
-      "results": "",
       "technical": "",
       "gallery": [
         {
           "url": "./media-11-deskinator-1.jpg",
-          "caption": "Early concept sketch: form, dimensions, and component layout.",
+          "caption": "Bench prototype with the wiring and drive wheels exposed.",
           "type": "image/jpeg"
         },
         {
           "url": "./media-10-deskinator-2.jpg",
-          "caption": "Prototype assembly with motors, electronics, and cleaning components.",
+          "caption": "Electronics and motors laid out during assembly.",
           "type": "image/jpeg"
         },
         {
           "url": "./media-09-deskinator-3.jpg",
-          "caption": "Assembled Deskinator prototype.",
+          "caption": "Dimensioned sketch showing the vacuum, dirt compartment, battery, and wheel positions.",
           "type": "image/jpeg"
         }
       ],
       "sample": false,
-      "status": "Completed"
+      "status": "Completed",
+      "sections": [
+        {
+          "title": "Where does the dirt go?",
+          "body": "The vacuum needed a path for the crumbs and somewhere to collect them. I sketched the intake and dirt compartment, then had to find room for the battery and drive wheels in the same footprint. The top, side, and front views show how much of the design came down to fitting everything together."
+        },
+        {
+          "title": "The sketch and the build",
+          "body": "In the bench photos, you can see the wheels, wiring, and electronics sharing space with the cleaning hardware. If I built it again, I’d test the intake on its own first and see what it actually picks up before building the rest of the chassis around it."
+        }
+      ]
     },
     {
       "id": "four-bar-linkage",
       "title": "4-bar linkage.",
       "category": "Mechanical design · Kinematics",
       "year": "03",
-      "summary": "A four-bar linkage explored through CAD assembly and mechanism geometry.",
+      "summary": "I used a SolidWorks motion study to see how the links and pivots move together through a cycle.",
       "cover": "./media-08-4-bar-linkage-1.jpg",
       "role": "",
       "duration": "",
       "tools": "",
-      "problem": "",
-      "decisions": "",
-      "development": "",
-      "results": "",
       "technical": "",
       "gallery": [
         {
           "url": "./media-08-4-bar-linkage-1.jpg",
-          "caption": "Four-bar linkage CAD assembly.",
+          "caption": "SolidWorks assembly with the motion-study timeline open.",
           "type": "image/jpeg"
         }
       ],
       "sample": false,
-      "status": "Completed"
+      "status": "Completed",
+      "sections": [
+        {
+          "title": "The position between the screenshots",
+          "body": "A linkage can look fine in one pose. I wanted to see what happened as it moved through the rest of its travel, so I used the motion timeline to step through the assembly."
+        },
+        {
+          "title": "What I’d check on a physical build",
+          "body": "I’d start where the links come closest to the frame. The CAD gives me a path to check. The real clearance would also depend on the fasteners, spacers, and any play in the joints."
+        }
+      ]
     },
     {
       "id": "designed-to-make",
       "title": "Innovic / FANUC",
       "category": "Industrial robotics · Fabrication",
       "year": "05",
-      "summary": "Robot setup, precision fixtures, and the practical work of turning CAD designs into fabricated parts.",
+      "summary": "At Innovic, I programmed and set up a FANUC robot, designed precision fixtures, and helped get parts fabricated across shifts.",
       "cover": "./media-07-innovic-fanuc-.jpg",
       "kind": 2,
       "role": "CAD & Fabrication Engineering Intern",
       "duration": "June–August 2025",
       "tools": "CAD / Fanuc robotics / jigs & fixtures",
-      "problem": "Support a high-precision fabrication project while coordinating production across multiple shifts.",
-      "decisions": "Designed jigs and fixtures for the project’s precision requirements. Geometry, tolerance choices, and manufacturing trade-offs will be added with the supporting drawings.",
-      "development": "Programmed and set up a Fanuc robot. Converted CAD designs into fabricated parts and coordinated production work across multi-shift teams.",
-      "results": "Contributed robot programming, fixture design, and fabricated components. Inspection results, tolerances, and production metrics will be added when available.",
       "technical": "",
       "gallery": [
         {
           "url": "./media-06-innovic-fanuc-2.jpg",
-          "caption": "FANUC robotic arm and fabrication setup.",
+          "caption": "FANUC tool head near the workpiece.",
           "type": "image/jpeg"
         },
         {
           "url": "./media-07-innovic-fanuc-.jpg",
-          "caption": "Industrial robot on the workshop floor.",
+          "caption": "The FANUC arm on the shop floor.",
           "type": "image/jpeg"
         }
       ],
       "sample": false,
-      "status": "Completed"
+      "status": "Completed",
+      "sections": [
+        {
+          "title": "Where the part sits matters",
+          "body": "I worked on both the robot setup and the jigs and fixtures for a precision fabrication job. The fixture locates the workpiece in the real world. If the next part sits differently, the robot can run the same path and still end up in the wrong place relative to the part."
+        },
+        {
+          "title": "Handing the job over",
+          "body": "I helped take parts from CAD to fabrication and coordinate the work across production shifts. The fixture was the part of the setup that could carry a locating decision from one shift to the next."
+        }
+      ]
     },
     {
       "id": "robotic-systems",
-      "title": "Better localization through SLAM.",
+      "title": "How a robot figures out where it is",
       "category": "Research · Autonomous navigation",
       "year": "07",
-      "summary": "Research into localization accuracy and efficiency through sensor fusion and SLAM optimization.",
+      "summary": "My 2023 research looked at how sensor fusion and algorithm choices affect localization in SLAM.",
       "cover": "",
       "kind": 1,
       "role": "Individual research",
       "duration": "January–June/July 2023 · Surat",
       "tools": "SLAM / sensor fusion / algorithm optimization",
-      "problem": "Explore how sensor fusion and algorithm optimization can improve simultaneous localization and mapping for robotic navigation.",
-      "decisions": "Focused the research on sensor fusion and optimization to address localization accuracy and efficiency. Specific algorithm comparisons will be documented alongside the paper.",
-      "development": "Conducted individual research into applications of SLAM for robotics, UAVs, and autonomous navigation.",
-      "results": "Produced research on improving localization precision. The paper, experimental methods, and quantitative comparisons will be added to this case study.",
       "technical": "",
       "gallery": [],
       "sample": false,
-      "status": "Completed"
+      "status": "Completed",
+      "sections": [
+        {
+          "title": "A bad position estimate shows up in the map",
+          "body": "In simultaneous localization and mapping, the robot builds a map while estimating its own position. If that estimate drifts, it can put a wall in the wrong place. My research asked how combining sensor readings and changing the algorithm could help keep the position estimate on track."
+        },
+        {
+          "title": "How much work should the robot do?",
+          "body": "Adding observations can help constrain where the robot is, but processing them also takes time. I looked at accuracy and computation together because a moving robot or UAV has to keep updating its position as it goes."
+        }
+      ]
     }
   ],
   "aboutPhotos": [],
-  "revision": "2026-10-25-remove-extra-about-photo",
+  "revision": "2026-11-12-project-stories",
   "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
   "internships": [
     {
