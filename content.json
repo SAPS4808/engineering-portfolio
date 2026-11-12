@@ -9,12 +9,12 @@
   "linkedin": "https://www.linkedin.com/in/shlokagrawal08/",
   "location": "Boston, Massachusetts",
   "availability": "Boston University / Class of 2028",
-  "resume": "./shlok-agrawal-resume.pdf",
+  "resume": "./shlok-agrawal-resume.pdf?v=2026-11-12",
   "hero": "./insidefpv-product-cutout.png",
   "portrait": "./media-13-me.jpg",
-  "experience": "Innovic Technology · CAD & Fabrication Engineering Intern | June–August 2025\nProgrammed and set up a Fanuc robot, designed precision jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts.\n\nRobotics Lab Internship | Surat | February–May 2024\nMentored RC car, boat, and waste-cleaning device projects. Applied SLAM to combine ground and aerial data for drone-and-rover 3D mapping.\n\nInsideFPV | CAD Intern / Drone Builder\nBuilt drones and oversaw three projects during the internship.\n\nLeadership\nBosMUN — Chair | February 2025\nCoordinated committee proceedings and structured debates.\nCare-N-Share — Founder | India\nOrganized educational resource distribution and book collection across eight schools.",
-  "education": "Boston University · College of Engineering\nB.S. in Mechanical Engineering\n2024–2028 | Expected graduation: May 2028\nDual concentrations: Robotics and Technology Innovation\nCGPA: 3.8\n\nActivities: BU HackHardware, Unmanned Aerial Vehicle Club, BU International Affairs Association",
-  "skills": "Programming & analysis\nPython · JavaScript · MySQL · MATLAB · R / AI & ML\n\nRobotics & hardware\nCAD · Fabrication · Fanuc robotics · Jigs & fixtures · SLAM · Sensor fusion · Raspberry Pi · Arduino · Microprocessors · LiDAR · Infrared sensing · RTOS · TCP/IP\n\nAdditional learning\nSummer at Brown — Brown University\nCommunication Skills — Trinity College London",
+  "experience": "Boston University · Individual aerial mapping project | January 2026–Present\nDeveloping a drone for terrain mapping.\n\nCAD & Drone Development Intern | May–August 2026\nBuilt 73 attachments and 52 fixtures, plus frames for eight drone types. Assembled and wired 12 specialized drones. Built component test jigs that reduced faulty parts by 20%.\n\nInnovic Technology · CAD & Fabrication Engineering Intern | June–August 2025\nProgrammed and set up a FANUC robot and designed 12+ precision jigs and fixtures. Converted 105+ CAD designs into fabricated parts while coordinating across three production shifts.\n\nRobotics Lab Internship · Mentor-Engineer | Surat · February–May 2024\nMentored six projects, including RC cars, boats, and waste-cleaning devices. Used SLAM to combine ground and aerial data from a rover and drone for 3D mapping.",
+  "education": "Boston University · College of Engineering | Expected May 2028\nB.S. in Mechanical Engineering · CGPA 3.7\nActivities: BU Robotics Club, Unmanned Aerial Vehicle Club, BU International Affairs Association",
+  "skills": "Programming & analysis: Python, R (AI/ML), MySQL, JavaScript, MATLAB\nHardware & systems: Raspberry Pi, Arduino, microprocessors, LiDAR, infrared sensing, TCP/IP, RTOS\nAdditional training: Summer at Brown (Brown University), Communication Skills (Trinity College London)",
   "projects": [
     {
       "id": "motion-study",
@@ -409,7 +409,7 @@
     }
   ],
   "aboutPhotos": [],
-  "revision": "2026-11-12-project-stories",
+  "revision": "2026-11-12-resume-update",
   "homeAbout": "I study Mechanical Engineering at Boston University, with concentrations in Robotics and Technology Innovation. I like building hardware and figuring out what makes it useful—from the mechanism and manufacturing process to the product and business behind it.",
   "internships": [
     {
@@ -426,5 +426,6 @@
       "role": "CAD & Fabrication Engineering Intern",
       "description": "Programmed a FANUC robot, designed jigs and fixtures, and coordinated CAD-to-fabrication work across production shifts."
     }
-  ]
+  ],
+  "academicProjects": "Robotic Arm · Virtual Linkage and Computer Vision | Boston University · September–October 2026\nBuilt a virtual linkage model in MATLAB and a web interface using robot kinematics, coordinate transformations, and joint-based motion control. Implemented AprilTag detection and pose estimation for spatial localization.\n\nSLAM Research | Surat · March–June 2023\nPublished research on using sensor fusion and algorithm optimization to improve localization accuracy and computational efficiency."
 }
